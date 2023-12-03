@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
-    <title>Language Translator | CodingNepal</title>
+    <title>Text Translator</title>
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awesome CDN Link for Icons -->
