@@ -49,6 +49,7 @@ public class HomeController {
    		System.out.println("JSON element:"+txt);
 		ModelAndView mav=new ModelAndView("home");
 		mav.addObject("text", txt.getAsString());
+		mav.addObject("oldText", text);
 		return mav;
 	}
 }

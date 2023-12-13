@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
     <meta charset="utf-8">
     <title>Text Translator</title>
@@ -203,12 +202,24 @@
 <body>
     <%
         String str=(String)request.getAttribute("text");
+        String oldStr=(String)request.getAttribute("oldText");
+        System.out.println(oldStr);
     %>
     <form action="translate">
         <div class="container">
             <div class="wrapper">
                 <div class="text-input">
-                    <textarea spellcheck="false" class="from-text" name="inputText" placeholder="Enter text to translate" id="inputText" onclick="showMsg()" readonly="true" required></textarea>
+                    <%
+                        if(oldStr!=null){
+                          %>
+                          <textarea spellcheck="false" class="from-text" name="inputText" id="inputText" required><%=oldStr%></textarea>
+                          <%  
+                        }else{
+                            %>
+                            <textarea spellcheck="false" class="from-text" name="inputText" placeholder="Enter text to translate" id="inputText" required></textarea>        
+                            <%
+                        }
+                    %>
                     <%
                     if(str!=null){
                         if(str.length()!=0){
@@ -339,37 +350,6 @@
         </div>
     </form>
     <script src="js/script.js"></script>
-    <script>
-        let source = document.getElementById("source");
-        source.addEventListener("change", handleSelectChange);
-
-        function handleSelectChange(event) {
-            let currentValue = event.target.value;
-            console.log(currentValue)
-            if(currentValue!=null && currentValue!==""){
-                document.getElementById("inputText").removeAttribute("readonly");
-            }
-        }
-
-        function showMsg(){
-            console.log("input text clicked");
-            console.log(document.getElementById("inputText").hasAttribute("readonly"));
-            if(document.getElementById("inputText").hasAttribute("readonly")){
-            document.getElementById("source").click();
-        }
-        }
-        
-        // function showMsg() {
-            
-        //     str=document.getElementById("inputText").hasAttribute("readonly");
-        //     if(str==true){
-        //         alert("Select a source languge");
-        //     }
-        //     source=document.getElementById("source").value;
-        //     alert(source);
-
-        // }
-    </script>
 </body>
 
 </html>
