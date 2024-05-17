@@ -1,5 +1,0 @@
-# Created at 2023-12-03T23:46:10.679
-Boot Manifest-JAR contains absolute paths in classpath 'E:\spring tool suite workspece\text-translator\text-translator\target\test-classes'
-Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
-'other' has different root
-
